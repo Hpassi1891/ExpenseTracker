@@ -18,6 +18,8 @@ extension MessageFilterExtension: ILMessageFilterQueryHandling {
 
     // Always .allow: this extension observes and records, it never hides or
     // reclassifies a legitimate message as junk/promotion.
-    completion(ILMessageFilterQueryResponse(action: .allow))
+    let response = ILMessageFilterQueryResponse()
+    response.action = .allow
+    completion(response)
   }
 }
